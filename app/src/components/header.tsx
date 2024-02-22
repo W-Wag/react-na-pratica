@@ -2,16 +2,17 @@ import { ChevronDown } from 'lucide-react'
 
 import nivoLogo from '../assets/logo-nivo.svg'
 import { Badge } from './ui/badge'
+import { Link } from 'react-router-dom'
 
 export function Header() {
   return (
     <div className="max-w-[1200px] mx-auto flex items-center justify-between">
       <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <img src={nivoLogo} alt="nivo.video" />
 
           <Badge>BETA</Badge>
-        </div>
+        </Link>
 
         <svg
           width="6"
@@ -66,8 +67,16 @@ export function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3">
+      <a
+        href="https://github.com/diego3g"
+        target="_blank"
+        className="flex items-center gap-3"
+        rel="noreferrer"
+      >
         <div className="flex flex-col items-end gap-0.5">
+          <span className="text-sm font-medium text-zinc-300/70">
+            Professor que ministrou o projeto
+          </span>
           <span className="text-sm font-medium">Diego Fernandes</span>
           <span className="text-xs text-zinc-400">diego@nivo.video</span>
         </div>
@@ -76,8 +85,7 @@ export function Header() {
           className="size-8 rounded-full"
           alt=""
         />
-        <ChevronDown className="size-4 text-zinc-600" />
-      </div>
+      </a>
     </div>
   )
 }
